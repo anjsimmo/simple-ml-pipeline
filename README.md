@@ -73,7 +73,7 @@ Inductive-loop traffic detectors are installed in the stop lines of each lane at
 
 VicRoads has also installed a small number of Bluetooth detectors. These record the Bluetooth MAC address (obfusicated for privacy) of any vehicles with Bluetooth devices whenever they pass one of the Bluetooth detector sites. When the same Bluetooth device passes by multiple detector sites, we can examine the time difference of the detections to infer the travel time between those sites.
 
-(see map.png)
+![Map](map.png?raw=true)
 
 The map shows Bluetooth detectors at the start (site 2409) and end (site 2425) of the stretch of freeway we are interested in. We will use detector data from site 2433 as a feature to aid our prediction.
 
@@ -81,7 +81,7 @@ We train the learning algorithms on all the data from Wednesday 19 August, and u
 
 # Pipeline
 
-(see flowchart.png)
+![Flowchart](flowchart.png?raw=true)
 
 At the top of the flowchart, we can see a directed acyclic graph of data merging and transformations as we massage the raw data into a more convenient format. It is the duty of the task definition to splits the data up into a train and test set. We then ask each learner to generate a model from the train data, test the learned model on the test data, then aggregate the results into a ladder of which model performed best. Currently we report Root-Mean-Squared (RMS) error - lower scores are better.
 
