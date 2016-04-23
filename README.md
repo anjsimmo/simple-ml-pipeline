@@ -9,7 +9,7 @@ Real world data science projects are messy and confusing. I want my own personal
 # Dependencies
 
 * Python3
-* Unix like environment with grep on path
+* Unix like environment with grep and [dot](http://www.graphviz.org/) on path
 
 Python Libraries:
 
@@ -17,6 +17,10 @@ Python Libraries:
 * [numpy](http://www.numpy.org/)
 * [pandas](http://pandas.pydata.org/)
 * [sklearn](http://scikit-learn.org/)
+
+On Ubuntu:
+sudo apt-get install graphviz
+
 
 # Usage
 
