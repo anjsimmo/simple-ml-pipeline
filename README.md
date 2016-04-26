@@ -9,18 +9,24 @@ Real world data science projects are messy and confusing. I want my own personal
 # Dependencies
 
 * Python3
-* Unix like environment with grep and [dot](http://www.graphviz.org/) on path
+* Unix like environment with `grep` and the [Graphvis](http://www.graphviz.org/) `dot` command on path
 
 Python Libraries:
 
 * [ruffus](http://www.ruffus.org.uk/)
 * [numpy](http://www.numpy.org/)
 * [pandas](http://pandas.pydata.org/)
-* [sklearn](http://scikit-learn.org/)
+* [scikit-learn](http://scikit-learn.org/)
 
-On Ubuntu:
+To install dependencies on Ubuntu:
+```
 sudo apt-get install graphviz
-
+# Download and install Anaconda: https://www.continuum.io/downloads
+conda create --name python3 python=3
+source activate python3
+conda install numpy pandas scikit-learn
+pip install ruffus
+```
 
 # Usage
 
@@ -93,4 +99,4 @@ At the top of the flowchart, we can see a directed acyclic graph of data merging
 
 This project doesn't attempt to help you design machine learning models. It simply provides a framework for testing them.
 
-There are some Jupyter notebooks in `jupyter_notebooks` that describe the design of each learner. My advice is to start by mucking around with the data in a notebook. Once you have a learner that looks promising, copy the code into a new learner module, run the pipeline, and check the score ladder to see if you've managed to make an improvement. There's no computational cost to leaving old learners around as a baseline - they will only re-run if the task changes (which should be rare).
+There are some [Jupyter](http://jupyter.org/) notebooks in `jupyter_notebooks` that describe the design of each learner. My advice is to start by mucking around with the data in a notebook. Once you have a learner that looks promising, copy the code into a new learner module, run the pipeline, and check the score ladder to see if you've managed to make an improvement. There's no computational cost to leaving old learners around as a baseline - they will only re-run if the task changes (which should be rare).
