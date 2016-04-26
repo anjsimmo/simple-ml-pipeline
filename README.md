@@ -21,9 +21,9 @@ Python Libraries:
 To install dependencies on Ubuntu:
 ```
 sudo apt-get install graphviz
-# Download and install Anaconda: https://www.continuum.io/downloads
-conda create --name python3 python=3
-source activate python3
+# Download and install conda for Python3 from: http://conda.pydata.org/miniconda.html
+conda create --name py3k python python=3
+source activate py3k
 conda install numpy pandas scikit-learn
 pip install ruffus
 ```
