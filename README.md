@@ -85,7 +85,7 @@ VicRoads has also installed a small number of Bluetooth detectors. These record 
 
 ![Map](map.png?raw=true)
 
-The map shows Bluetooth detectors at the start (site 2409) and end (site 2425) of the stretch of freeway we are interested in. We will use detector data from site 2433 as a feature to aid our prediction.
+The map shows Bluetooth detectors at the start (site 2409) and end (site 2425) of the stretch of highway we are interested in. We will use detector data from site 2433 as a feature to aid our prediction.
 
 We train the learning algorithms on all the data from Wednesday 19 August, and use this to predict travel times 1 week later for Wednesday 26 August given the time and volume readings.
 
