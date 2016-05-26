@@ -28,6 +28,16 @@ conda install numpy pandas scikit-learn
 pip install ruffus
 ```
 
+To install dependencies on Mac OSX:
+```
+brew install graphviz
+# Download and install conda for Python3 from: http://conda.pydata.org/miniconda.html
+conda create --name py3k python python=3
+source activate py3k
+conda install numpy pandas scikit-learn
+pip install ruffus
+```
+
 # Usage
 
 `./traffic_pipeline.py`
