@@ -44,7 +44,7 @@ pip install ruffus
 
 The pipeline will download all data from the web (currently an archive on my university's OwnCloud drive). It will then transform it, run a few models, and summarize the results in `data/traveltime.ladder`.
 
-The first run may take a few minutes, so please be patient. Subsequent runs will be much quicker, as each step of the pipeline only re-runs if it's input changes.
+The first run may take a few minutes, so please be patient. Subsequent runs will be much quicker, as each step of the pipeline only re-runs if its input changes.
 
 # Defining the machine learning task
 
