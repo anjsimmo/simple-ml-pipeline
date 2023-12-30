@@ -37,5 +37,5 @@ def split_task_traveltime(input_file, output_files):
     datatables.traveltime.write(low_dates, train_out)
     datatables.traveltime.write(high_dates, test_out)
     # hide travel time column to be predicted
-    high_dates_xs = high_dates.drop('y', 1)
+    high_dates_xs = high_dates.drop('y', axis=1)
     datatables.traveltime.write_xs(high_dates_xs, test_xs)

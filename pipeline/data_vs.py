@@ -7,14 +7,14 @@ import urllib.request
 
 @originate("data/VSDATA_20150819.csv")
 def vs19(output_file):
-    # Download file from AARNet Cloudstor OwnCloud Service
-    url = "https://cloudstor.aarnet.edu.au/plus/index.php/s/SlTMKzq9OKOaWQr/download?path=%2Fvicroads_opendata&files=VSDATA_20150819.csv"
+    # Download file from web
+    url = "http://data.simmons.ai/archive/vicroads_opendata/VSDATA_20150819.csv"
     print("Downloading {0} from {1}".format(output_file, url))
     urllib.request.urlretrieve(url, output_file)
 
 @originate("data/VSDATA_20150826.csv")
 def vs26(output_file):
-    url = "https://cloudstor.aarnet.edu.au/plus/index.php/s/SlTMKzq9OKOaWQr/download?path=%2Fvicroads_opendata&files=VSDATA_20150826.csv"
+    url = "http://data.simmons.ai/archive/vicroads_opendata/VSDATA_20150826.csv"
     print("Downloading {0} from {1}".format(output_file, url))
     urllib.request.urlretrieve(url, output_file)
 

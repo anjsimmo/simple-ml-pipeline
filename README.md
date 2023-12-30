@@ -18,31 +18,33 @@ Python Libraries:
 * [pandas](http://pandas.pydata.org/)
 * [scikit-learn](http://scikit-learn.org/)
 
-To install dependencies on Ubuntu:
+To run the notebooks you'll also need:
+* [Jupyter](http://jupyter.org/)
+* [matplotlib](https://matplotlib.org/)
+
+To install all dependencies on Ubuntu:
 ```
 sudo apt-get install graphviz
 # Download and install conda for Python3 from: http://conda.pydata.org/miniconda.html
-conda create --name py3k python python=3
-source activate py3k
-conda install numpy pandas scikit-learn
-pip install ruffus
+conda create -n pipeline python=3.11.5
+conda activate pipeline
+pip install -r requirements.txt
 ```
 
-To install dependencies on Mac OSX:
+To install dependencies on macOS:
 ```
 brew install graphviz
 # Download and install conda for Python3 from: http://conda.pydata.org/miniconda.html
-conda create --name py3k python python=3
-source activate py3k
-conda install numpy pandas scikit-learn
-pip install ruffus
+conda create -n pipeline python=3.11.5
+conda activate pipeline
+pip install -r requirements.txt
 ```
 
 # Usage
 
 `./traffic_pipeline.py`
 
-The pipeline will download all data from the web (currently an archive on my university's OwnCloud drive). It will then transform it, run a few models, and summarize the results in `data/traveltime.ladder`.
+The pipeline will download all data from the web (currently an archive hosted via AWS). It will then transform it, run a few models, and summarize the results in `data/traveltime.ladder`.
 
 The first run may take a few minutes, so please be patient. Subsequent runs will be much quicker, as each step of the pipeline only re-runs if its input changes.
 

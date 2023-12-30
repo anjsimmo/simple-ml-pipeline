@@ -7,14 +7,14 @@ import urllib.request
 
 @originate("data/BLUETH_20150819.BT")
 def bt19(output_file):
-    # Download file from AARNet Cloudstor OwnCloud Service
-    url = "https://cloudstor.aarnet.edu.au/plus/index.php/s/SlTMKzq9OKOaWQr/download?path=%2Fvicroads_opendata&files=BLUETH_20150819.BT"
+    # Download file from web
+    url = "http://data.simmons.ai/archive/vicroads_opendata/BLUETH_20150819.BT"
     print("Downloading {0} from {1}".format(output_file, url))
     urllib.request.urlretrieve(url, output_file)
 
 @originate("data/BLUETH_20150826.BT")
 def bt26(output_file):
-    url = "https://cloudstor.aarnet.edu.au/plus/index.php/s/SlTMKzq9OKOaWQr/download?path=%2Fvicroads_opendata&files=BLUETH_20150826.BT"
+    url = "http://data.simmons.ai/archive/vicroads_opendata/BLUETH_20150826.BT"
     print("Downloading {0} from {1}".format(output_file, url))
     urllib.request.urlretrieve(url, output_file)
 
@@ -85,7 +85,7 @@ def import_bt(input_file, output_file):
     ts = pd.Series(list(inbound["Travel Time"]),
                    index=list([parse_date(t) for t in inbound["Time A"]]))
 
-    ts_resampled = ts.resample('15Min', how='median')
+    ts_resampled = ts.resample('15Min').agg('median')
 
     # extract collection date from filename
     p = re.compile(r"data/BLUETH_(?P<date>\d{8})\.filtered.BT")
@@ -98,7 +98,7 @@ def import_bt(input_file, output_file):
     ts_resampled = pd.Series(ts_resampled, index=rng)
 
     # Fill in missing values
-    ts_resampled = ts_resampled.fillna(method='pad')
+    ts_resampled = ts_resampled.ffill()
 
     # Travel time from site 2409 (Chapel St) to 2425 (Warrigal Rd) along Princes Highway (Outbound/Westbound).
     ts_resampled.to_csv(output_file)
